@@ -1,4 +1,4 @@
-<%= form_with(model: mahasiswa, local: true) do |form| %>
+  <%= form_with(model: mahasiswa, local: true) do |form| %>
   <% if mahasiswa.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(mahasiswa.errors.count, "error") %> prohibited this mahasiswa from being saved:</h2>
@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form group">
     <%= form.label :nama %>
-    <%= form.text_field :nama %>
+    <%= form.text_field :nama, class: "form form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form group">
     <%= form.label :alamat %>
-    <%= form.text_field :alamat %>
+    <%= form.text_field :alamat, class: "form form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form group">
     <%= form.label :tanggal %>
     <%= form.date_select :tanggal %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:"btn btn-primary" %>
   </div>
 <% end %>
